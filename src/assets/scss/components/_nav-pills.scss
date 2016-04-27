@@ -1,0 +1,119 @@
+﻿/* Nav pills
+---------------------------------- */
+.nav-pills > li > a {
+  border-radius: 0;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  color: #666666;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.nav-pills.nav-stacked > li + li {
+  margin-left: 0;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.nav-pills > li > a:hover,
+.nav-pills > li > a:focus {
+  border: 1px solid #f3f3f3;
+  color: $color-nav-pills-a;
+  background-color: #fafafa;
+}
+.nav-pills.nav-stacked > li > a:after {
+  font-family: "FontAwesome";
+  content: "\f105";
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 15px;
+  top: 9px;
+  color: #d1d1d1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.nav-pills > li.active > a:after {
+  color: $color-nav-pills-a;
+}
+.nav-pills > li.active > a:hover:after,
+.nav-pills > li.active > a:focus:after,
+.nav-pills > li > a:hover:after,
+.nav-pills > li > a:focus:after {
+  color: $color-nav-pills-a;
+  right: 10px;
+}
+.footer-content .nav-pills > li > a {
+  padding: 4px 0px;
+  border-color: transparent;
+  color: #999;
+  font-weight: 400;
+}
+.footer-content .nav-pills > li:last-child > a {
+  border-bottom: none;
+}
+.footer-content .nav-pills > li.active > a,
+.footer-content .nav-pills > li.active > a:focus,
+.footer-content .nav-pills > li > a:focus {
+  color: #999;
+  background-color: transparent;
+  border-color: transparent;
+}
+.footer-content .nav-pills > li.active > a:hover,
+.footer-content .nav-pills > li > a:hover {
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+}
+.footer-content .nav-pills.nav-stacked > li > a:after {
+  top: 3px;
+}
+.footer-content .nav-pills.nav-stacked > li > a:after,
+.footer-content .nav-pills > li.active > a:after,
+.footer-content .nav-pills > li.active > a:hover:after,
+.footer-content .nav-pills > li.active > a:focus:after,
+.footer-content .nav-pills > li > a:hover:after,
+.footer-content .nav-pills > li > a:focus:after {
+  color: #999
+}
+.light .footer-content .nav-pills > li > a,
+.light .footer-content .nav-pills > li.active > a,
+.light .footer-content .nav-pills > li.active > a:focus,
+.light .footer-content .nav-pills > li > a:focus {
+  color: #666;
+}
+.light .footer-content .nav-pills > li.active > a:hover,
+.light .footer-content .nav-pills > li > a:hover {
+  color: #cd3c2e;
+}
+.light .footer-content .nav-pills.nav-stacked > li > a:after,
+.light .footer-content .nav-pills > li.active > a:after,
+.light .footer-content .nav-pills > li.active > a:hover:after,
+.light .footer-content .nav-pills > li.active > a:focus:after,
+.light .footer-content .nav-pills > li > a:hover:after,
+.light .footer-content .nav-pills > li > a:focus:after {
+  color: #666
+}
+.nav-pills > .active > a > .badge {
+  color: #cd3c2e;
+  background-color: #fff;
+  border-color: #cd3c2e;  
+}
+
+/* Process pills */
+.process .nav-pills > li + li {
+  margin-left: 60px;
+  position: relative;
+}
+.process .nav-pills > li + li:after {
+  font-family: "FontAwesome";
+  content: "\f101";
+  position: absolute;
+  top: 10px;
+  left: -35px;
+  width: 10px;
+  background-color: #fff;
+}
