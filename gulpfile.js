@@ -3,10 +3,10 @@
  */
 
 // Project configuration
-var project      = 'front-end-automation-framework', // Project name, used for build zip.
-    url          = 'http://localhost:8080/front-end-automation-framework', // Local Development URL for BrowserSync. Change as-needed.
+var project      = 'iDea', // Project name, used for build zip.
+    url          = 'http://localhost:8080/wordpress', // Local Development URL for BrowserSync. Change as-needed.
     bower        = './assets/bower_components/'; // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
-    build        = './front-end-automation-framework/', // Files that you want to package into a zip go here
+    build        = './idea/', // Files that you want to package into a zip go here
     customJs = [];
 
 var basePaths = {
@@ -16,7 +16,7 @@ var basePaths = {
 };
 var paths = {
   html: {
-    src: './src/**/*.html',
+    src: './src/**/*.php',
     dst: './dist/'
   },
   img: {
@@ -35,7 +35,17 @@ var paths = {
   js: {
     src: basePaths.src + 'js/*.js',
     dst: basePaths.dst + 'js'
-  }
+  },
+  theme: {
+    lang: {
+      src: 'src/languages/**/*', // Glob pattern matching any language files you'd like to copy over; we've broken this out in case you want to automate language-related functions
+      dst: 'dist/languages/'
+    },
+    php: {
+      src: 'src/**/*.php', // This simply copies PHP files over; both this and the previous task could be combined if you like
+      dst: 'dist/'
+    }
+  },
 };
 
 // Load plugins
@@ -86,16 +96,15 @@ if(gutil.env.type === 'prod') {
  */
 gulp.task('browser-sync', function() {
   var files = [
-    // '**/*.php',
-    // '**/*.html',
-    '**/*.{png,jpg,gif}'
+    'dist/**',
+    '!dist/**.map'
   ];
   browserSync.init(files, {
-    server: {
-      baseDir: './dist'
-    },
+    // server: {
+    //   baseDir: './dist'
+    // },
     // Read here http://www.browsersync.io/docs/options/
-    // proxy: url,
+    proxy: url,
     // port: 8080,
     // Tunnel the Browsersync server through a random Public URL
     // tunnel: true,
@@ -104,7 +113,11 @@ gulp.task('browser-sync', function() {
     // tunnel: "ppress",
 
     // Inject CSS changes
-    injectChanges: true
+    injectChanges: true,
+
+    watchOptions: {
+      debounceDelay: 2000 // This introduces a small delay when watching for file change events to avoid triggering too many reloads
+    }
 
   });
 });
@@ -118,12 +131,24 @@ gulp.task('clean', function(cb) {
 });
 
 /**
- * Html
+ * theme
  */
-gulp.task('html', function() {
-  gulp.src(paths.html.src)
-    .pipe(gulp.dest(paths.html.dst));
+// Copy PHP source files to the `build` folder
+gulp.task('theme-php', function() {
+  return gulp.src(paths.theme.php.src)
+  // .pipe(plugins.changed(paths.theme.php.dst))
+  .pipe(gulp.dest(paths.theme.php.dst));
 });
+
+// Copy everything under `src/languages` indiscriminately
+gulp.task('theme-lang', function() {
+  return gulp.src(paths.theme.lang.src)
+  .pipe(plugins.changed(paths.theme.lang.dst))
+  .pipe(gulp.dest(paths.theme.lang.dst));
+});
+
+// All the theme tasks in one
+gulp.task('theme', ['theme-lang', 'theme-php']);
 
 /**
  * Styles: Vendor
@@ -334,13 +359,13 @@ gulp.task('buildZip', function() {
 
 // Package Distributable Theme
 gulp.task('build', ['clean'], function(cb) {
-  runSequence(['html', 'images', 'vendorStyles', 'styles', 'rjs'], 'buildZip','cleanupFinal', cb);
+  runSequence(['theme', 'images', 'vendorStyles', 'styles', 'rjs'], 'buildZip','cleanupFinal', cb);
 });
 
 // Watch Task
-gulp.task('default', ['html', 'images', 'vendorStyles', 'styles', 'rjs', 'browser-sync'], function () {
+gulp.task('default', ['theme', 'images', 'vendorStyles', 'styles', 'rjs', 'browser-sync'], function () {
   gulp.watch(['dist/**']).on('change', browserSync.reload);
-  gulp.watch('src/**/*.html', ['html'])
+  gulp.watch('src/**/*.php', ['theme'])
   gulp.watch('src/assets/img/**/*', ['images']);
   gulp.watch('src/assets/img/sprites/**/*', ['sprite']);
   gulp.watch('src/assets/vendor/**/*', ['vendorStyles']);

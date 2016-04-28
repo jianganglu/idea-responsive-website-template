@@ -1,28 +1,28 @@
 /* 1 Typography
 ----------------------------------------------------------------------------- */
 html {
-    height: 100%;
+  height: 100%;
 }
 body {
-    /* font-family: 'Open Sans', sans-serif; */
-    font-family: Microsoft YaHei,"Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif;
-    font-size: 15px;
-    line-height: 1.50;
-    color: #666666;
-    background-color: #ffffff;
-    .nav-fixed {
-        position: fixed;
-    }
-    .nav-absolute {
-        position: absolute;
-    }
-    .nav-absolute-bottom {
-        position: absolute;
-    }
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: Microsoft YaHei,"Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  background-color: #ffffff;
+  .nav-fixed {
+    position: fixed;
+  }
+  .nav-absolute {
+    position: absolute;
+  }
+  .nav-absolute-bottom {
+    position: absolute;
+  }
 }
 body.full-height, body.full-height .page-wrapper {
-    background-color: #fafafa;
-    min-height: 100%;
+  background-color: #fafafa;
+  min-height: 100%;
 }
 h1,
 h2,
@@ -30,8 +30,8 @@ h3,
 h4,
 h5,
 h6 {
-    color: #343434;
-    line-height: 1.2;
+  color: #343434;
+  line-height: 1.2;
 }
 h1 a,
 h2 a,
@@ -39,11 +39,11 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-    color: #343434;
+  color: #343434;
 }
 h1 {
-    font-size: 38px;
-    font-weight: 700;
+  font-size: 38px;
+  font-weight: 700;
 }
 h2 {
     font-size: 28px;

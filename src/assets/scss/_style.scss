@@ -1,48 +1,49 @@
 ﻿/*! Base */
 @import
-  './base/base-style'
-, './base/blue'
-, './base/fontello'
+  './base/neat'
+//   './base/base-style'
+// , './base/blue'
+// , './base/fontello'
 ;
 
 /*! Helpers */
-@import 
-  './helpers/variables'
-;
+// @import 
+//   './helpers/variables'
+// ;
 
 /*! Layout */
-@import
-  './layout/common'
-, './layout/header'
-, './layout/footer'
-;
+// @import
+// './layout/common'
+// , './layout/header'
+// , './layout/footer'
+// ;
 
 /*! Components */
-@import
-  './components/component'
-, './components/animate'
-, './components/animations'
-, './components/boxes'
-, './components/nav'
-, './components/nav-pills'
-, './components/revolution'
-, './components/overlay'
-, './components/buttons'
-, './components/style-switcher'
-, './components/breadcrumb'
-, './components/social-links'
-, './components/wppagenavi'
-, './components/collapse'
-, './components/owl-controls'
-;
+// @import
+//   './components/component'
+// , './components/animate'
+// , './components/animations'
+// , './components/boxes'
+// , './components/nav'
+// , './components/nav-pills'
+// , './components/revolution'
+// , './components/overlay'
+// , './components/buttons'
+// , './components/style-switcher'
+// , './components/breadcrumb'
+// , './components/social-links'
+// , './components/wppagenavi'
+// , './components/collapse'
+// , './components/owl-controls'
+// ;
 
 /*! Pages*/
-@import 
-  './pages/index'
-, './pages/404'
-, './pages/page1'
-, './pages/page2'
-, './pages/about'
-, './pages/contact'
-, './pages/service'
-;
+// @import 
+//   './pages/index'
+// , './pages/404'
+// , './pages/page1'
+// , './pages/page2'
+// , './pages/about'
+// , './pages/contact'
+// , './pages/service'
+// ;
