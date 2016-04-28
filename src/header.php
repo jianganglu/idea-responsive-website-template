@@ -28,10 +28,10 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- lib styles -->
-    <link href="assets/css/lib.css" rel="stylesheet">
+    <link href="<?php bloginfo( 'template_url' ); ?>/assets/css/lib.css" rel="stylesheet">
 
     <!-- custom styles -->
-    <link href="assets/css/style-red.css" rel="stylesheet">
+    <link href="<?php bloginfo( 'template_url' ); ?>/assets/css/style-red.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
