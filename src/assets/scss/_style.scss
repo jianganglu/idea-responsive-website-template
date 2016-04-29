@@ -1,25 +1,30 @@
-﻿/*! Base */
+﻿/*! Vendor */
 @import
   './base/neat'
+;
+
+/*! Helpers */
+@import 
+  './helpers/variables'
+;
+
+/*! Base */
+// @import
 //   './base/base-style'
 // , './base/blue'
 // , './base/fontello'
 ;
 
-/*! Helpers */
-// @import 
-//   './helpers/variables'
-// ;
-
 /*! Layout */
-// @import
-// './layout/common'
+@import
+  './layout/common'
 // , './layout/header'
 // , './layout/footer'
-// ;
+;
 
 /*! Components */
-// @import
+@import
+  './components/social-links'
 //   './components/component'
 // , './components/animate'
 // , './components/animations'
@@ -35,7 +40,7 @@
 // , './components/wppagenavi'
 // , './components/collapse'
 // , './components/owl-controls'
-// ;
+;
 
 /*! Pages*/
 // @import 

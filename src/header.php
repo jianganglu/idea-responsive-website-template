@@ -28,7 +28,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- lib styles -->
-    <link href="<?php bloginfo( 'template_url' ); ?>/assets/css/lib.css" rel="stylesheet">
+    <link href="<?php bloginfo( 'template_url' ); ?>/assets/css/libs.css" rel="stylesheet">
 
     <!-- custom styles -->
     <link href="<?php bloginfo( 'template_url' ); ?>/assets/css/style-red.css" rel="stylesheet">
